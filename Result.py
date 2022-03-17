@@ -77,5 +77,8 @@ elif(time <= 18):
 else:
     probability = probability * (61/872)
 
+
+
 print(probability * 1000)
+
 
