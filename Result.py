@@ -1,84 +1,99 @@
 
-probability = 1;
+# probability, char_pro, tag_pro, day_pro, time_pro = 0;
 
 chars = int(input("Enter number of characters in your Title (At max 100) : "))
 
 if(chars < 10):
-    probability = 0
+    char_pro = 0
 elif(chars <= 20):
-    probability = probability * (22/872)
+    char_pro = (22/872)
 elif(chars <= 30):
-    probability = probability * (84/872)
+    char_pro = (84/872)
 elif(chars <= 40):
-    probability = probability * (116/872)
+    char_pro = (116/872)
 elif(chars <= 50):
-    probability = probability * (127/872)
+    char_pro = (127/872)
 elif(chars <= 60):
-    probability = probability * (106/872)
+    char_pro = (106/872)
 elif(chars <= 70):
-    probability = probability * (78/872)
+    char_pro = (78/872)
 elif(chars <= 80):
-    probability = probability * (81/872)
+    char_pro = (81/872)
 elif(chars <= 90):
-    probability = probability * (110/872)
+    char_pro = (110/872)
 elif(chars <= 100):
-    probability = probability * (148/872)
+    char_pro = (148/872)
+
+
 
 tags = int(input("Enter number of tags in your Video(At max 100) : "))
 
 if(tags < 10):
-    probability = probability * (37/872)
+    tag_pro = (37/872)
 elif(tags <= 20):
-    probability = probability * (86/872)
+    tag_pro = (86/872)
 elif(tags <= 30):
-    probability = probability * (74/872)
+    tag_pro = (74/872)
 elif(tags <= 40):
-    probability = probability * (112/872)
+    tag_pro = (112/872)
 elif(tags <= 50):
-    probability = probability * (131/872)
+    tag_pro = (131/872)
 elif(tags <= 60):
-    probability = probability * (147/872)
+    tag_pro = (147/872)
 elif(tags <= 70):
-    probability = probability * (177/872)
+    tag_pro = (177/872)
 elif(tags <= 80):
-    probability = probability * (80/872)
+    tag_pro = (80/872)
 elif(tags <= 90):
-    probability = probability * (18/872)
+    tag_pro = (18/872)
 elif(tags <= 100):
-    probability = probability * (1/872)
+    tag_pro = (1/872)
 
 
 day = input("Enter your day of Uploading Video : ")
 
 if(day == "Sunday" or day == "sunday"):
-    probability = probability * (74/872)
+    day_pro = (74/872)
 elif(day == "Monday" or day == "monday"):
-    probability = probability * (103/872)
+    day_pro = (103/872)
 elif(day == "Tuesday" or day == "tuesday"):
-    probability = probability * (154/872)
+    day_pro = (154/872)
 elif(day == "Wednesday" or day == "wednesday"):
-    probability = probability * (147/872)
+    day_pro = (147/872)
 elif(day == "Thursday" or day == "thursday"):
-    probability = probability * (144/872)
+    day_pro = (144/872)
 elif(day == "Friday" or day == "friday"):
-    probability = probability * (148/872)
+    day_pro = (148/872)
 elif(day == "Saturday" or day == "saturday"):
-    probability = probability * (102/872)
+    day_pro = (102/872)
 
 
-time = int(input("Enter time of uploading video in (24hr HH MM) format : "))
+time = int(input("Enter time of uploading video in (24hr HH) format : "))
 
 if(time <= 6):
-    probability = probability * (235/872)
+    time_pro = (235/872)
 elif(time <= 12):
-    probability = probability * (276/872)
+    time_pro = (276/872)
 elif(time <= 18):
-    probability = probability * (296/872)
+    time_pro = (296/872)
 else:
-    probability = probability * (61/872)
+    time_pro = (61/872)
+
+probability = (char_pro + tag_pro + time_pro + day_pro) * 100
 
 
-
-print(probability * 1000)
+if(probability > 88):
+    print("Your Inputs are Accurate, Video has high chances of becoming a Trending Video !")
+else:
+    print("You Need to change your Paramters in the Video, for increasing chances of Video going to trending Page, here are some suggestions you can use :  ")
+    
+    if(char_pro < (148/872)):
+        print("Keep your Title Character length between 90 to 100 nad using keywords like - The, Year")
+    if(tag_pro < (170/872)):
+        print("Use Tags while uploading your Video to increase virality of content, and try to keep number of tags between 60 to 70.")
+    if(day_pro < (154/872)):
+        print("For increasing chances of Video going to trending Page, upload it on Tuesday.")
+    if(time_pro < (296/872)):
+        print("For increasing chances of Video going to trending Page, upload the video in the Afternoon, between 12Pm to 6PM")
 
 
