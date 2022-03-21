@@ -83,18 +83,20 @@ elif(time <= 18):
 else:
     time_pro = (61/872)
 
-probability = (char_pro + tag_pro + time_pro + day_pro) * 100
+# highest = 21.433
 
-p = (probability/88)
+probability = ((char_pro*0.4) + (tag_pro*0.3) + (time_pro*0.2) + (day_pro*0.1)) * 100
 
-print(" \n \n Probability is :  " , p)
+p = (probability/21.433) * 100
+
+print(" \n \n Probability Percentile is :  " , '%.3f'%p)
+
 
 print("\n ")
 
 
-
-if(probability > 88):
-    print("Your Inputs are Accurate, Video has high chances of becoming a Trending Video !")
+if(p >= 100):
+    print(" \n Your Inputs are Accurate, Video has high chances of becoming a Trending Video ! \n")
 else:
     print("You Need to change your Paramters in the Video, for increasing chances of Video going to trending Page, here are some suggestions you can use :  ")
     
